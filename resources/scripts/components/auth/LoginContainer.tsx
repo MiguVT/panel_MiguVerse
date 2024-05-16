@@ -102,17 +102,6 @@ function LoginContainer() {
                         />
                     </div>
                     <h2 className='text-xl font-extrabold mb-2'>Login</h2>
-                    <div className='text-sm mb-6'>
-                        New to Pyro?{' '}
-                        <a
-                            href='https://pay.pyro.host/register'
-                            target='_blank'
-                            className='text-[#fa4e49]'
-                            rel='noreferrer'
-                        >
-                            Sign up
-                        </a>
-                    </div>
                     <Field
                         id='usernameOrEmail'
                         type={'text'}
