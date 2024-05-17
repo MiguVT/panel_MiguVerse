@@ -1,4 +1,4 @@
-// FIXME: replace with radix tooltip
+import * as Tooltip from '@radix-ui/react-tooltip';
 // import Tooltip from '@/components/elements/tooltip/Tooltip';
 import { Actions, useStoreActions } from 'easy-peasy';
 import QRCode from 'qrcode.react';

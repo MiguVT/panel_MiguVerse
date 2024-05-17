@@ -1,7 +1,7 @@
 import { ActivityLog } from '@definitions/user';
 // FIXME: add icons back
 import clsx from 'clsx';
-// FIXME: replace with radix tooltip
+import * as Tooltip from '@radix-ui/react-tooltip';
 // import Tooltip from '@/components/elements/tooltip/Tooltip';
 import { formatDistanceToNowStrict } from 'date-fns';
 import { Link } from 'react-router-dom';
@@ -67,16 +67,16 @@ export default ({ activity, children }: Props) => {
                         </Link>
                         <div className={clsx(style.icons, 'group-hover:text-zinc-300')}>
                             {activity.isApi && (
-                                // <Tooltip placement={'top'} content={'Using API Key'}>
+                                <Tooltip placement={'top'} content={'Using API Key'}>
                                 // <TerminalIcon />
                                 <div>terminal icon</div>
-                                // </Tooltip>
+                                </Tooltip>
                             )}
                             {activity.event.startsWith('server:sftp.') && (
-                                // <Tooltip placement={'top'} content={'Using SFTP'}>
+                                <Tooltip placement={'top'} content={'Using SFTP'}>
                                 // <FolderOpenIcon />
                                 <div>folder open icon</div>
-                                // </Tooltip>
+                                </Tooltip>
                             )}
                             {children}
                         </div>

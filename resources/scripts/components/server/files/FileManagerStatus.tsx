@@ -1,4 +1,4 @@
-// FIXME: replace with radix tooltip
+import { Tooltip } from '@radix-ui/react-tooltip';
 // import Tooltip from '@/components/elements/tooltip/Tooltip';
 // FIXME: add icons back
 import { useSignal } from '@preact/signals-react';
@@ -46,11 +46,11 @@ const FileUploadList = () => {
         <div className={'space-y-2 mt-6'}>
             {uploads.map(([name, file]) => (
                 <div key={name} className={'flex items-center space-x-3 bg-zinc-700 p-3 rounded'}>
-                    {/* <Tooltip content={`${Math.floor((file.loaded / file.total) * 100)}%`} placement={'left'}> */}
+                    <Tooltip content={`${Math.floor((file.loaded / file.total) * 100)}%`} placement={'left'}>
                     <div className={'flex-shrink-0'}>
                         <Spinner progress={(file.loaded / file.total) * 100} className={'w-6 h-6'} />
                     </div>
-                    {/* </Tooltip> */}
+                    </Tooltip>
                     <Code className={'flex-1 truncate'}>{name}</Code>
                     <button
                         onClick={cancelFileUpload.bind(this, name)}
@@ -89,7 +89,7 @@ export default () => {
     return (
         <>
             {count > 0 && (
-                // <Tooltip content={`${count} files are uploading, click to view`}>
+                <Tooltip content={`${count} files are uploading, click to view`}>
                 <button className={'flex items-center justify-center w-10 h-10'} onClick={() => (open.value = true)}>
                     <svg
                         className='animate-spin -ml-1 mr-3 h-5 w-5 text-white'
@@ -112,7 +112,7 @@ export default () => {
                         ></path>
                     </svg>
                 </button>
-                // </Tooltip>
+                </Tooltip>
             )}
             <FileUploadListDialog open={open.value} onClose={() => (open.value = false)} />
         </>
