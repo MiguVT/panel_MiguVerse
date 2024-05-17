@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 import Button from '@/components/elements/Button';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { faAngleDoubleRight, faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
+
 import { PaginatedResult } from '@/api/http';
 
 interface RenderFuncProps<T> {
@@ -43,8 +47,7 @@ function Pagination<T>({ data: { items, pagination }, onPageSelect, children }: 
                 <div className={`mt-4 flex justify-center`}>
                     {(pages?.[0] ?? 0) > 1 && !isFirstPage && (
                         <Block isSecondary color={'primary'} onClick={() => onPageSelect(1)}>
-                            {/* <FontAwesomeIcon icon={faAngleDoubleLeft} /> */}
-                            FIXME: Left
+                            <FontAwesomeIcon icon={faAngleDoubleLeft} />
                         </Block>
                     )}
                     {pages.map((i) => (
@@ -59,8 +62,7 @@ function Pagination<T>({ data: { items, pagination }, onPageSelect, children }: 
                     ))}
                     {(pages?.[4] ?? 0) < pagination.totalPages && !isLastPage && (
                         <Block isSecondary color={'primary'} onClick={() => onPageSelect(pagination.totalPages)}>
-                            {/* <FontAwesomeIcon icon={faAngleDoubleRight} /> */}
-                            FIXME: Right
+                            <FontAwesomeIcon icon={faAngleDoubleRight} />
                         </Block>
                     )}
                 </div>

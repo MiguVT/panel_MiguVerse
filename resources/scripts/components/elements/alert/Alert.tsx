@@ -1,4 +1,4 @@
-// FIXME: add icons back
+import { ShieldExclamationIcon, ExclamationIcon } from '@heroicons/react/outline';
 import clsx from 'clsx';
 
 interface AlertProps {
@@ -20,11 +20,9 @@ export default ({ type, className, children }: AlertProps) => {
             )}
         >
             {type === 'danger' ? (
-                // <ShieldExclamationIcon className={'w-6 h-6 text-red-400 mr-2'} />
-                <div>FIXME: ShieldExclamationIcon</div>
+                <ShieldExclamationIcon className={'w-6 h-6 text-red-400 mr-2'} />
             ) : (
-                // <ExclamationIcon className={'w-6 h-6 text-yellow-500 mr-2'} />
-                <div>FIXME: ExclamationIcon</div>
+                <ExclamationIcon className={'w-6 h-6 text-yellow-500 mr-2'} />
             )}
             {children}
         </div>

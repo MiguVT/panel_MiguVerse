@@ -1,6 +1,8 @@
 import { Form, Formik, FormikHelpers } from 'formik';
 import { useState } from 'react';
 import { object, string } from 'yup';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt, faDatabase, faEye } from '@fortawesome/free-solid-svg-icons';
 
 import FlashMessageRender from '@/components/FlashMessageRender';
 import Button from '@/components/elements/Button';
@@ -141,8 +143,7 @@ export default ({ database, className }: Props) => {
             </Modal>
             <div className={className}>
                 <div className={`hidden md:block`}>
-                    {/* <FontAwesomeIcon icon={faDatabase} fixedWidth /> */}
-                    FIXME: Database Icon
+                    <FontAwesomeIcon icon={faDatabase} fixedWidth />
                 </div>
                 <div className={`flex-1 ml-4`}>
                     <CopyOnClick text={database.name}>
@@ -167,13 +168,11 @@ export default ({ database, className }: Props) => {
                 </div>
                 <div className={`ml-8`}>
                     <Button isSecondary onClick={() => setConnectionVisible(true)}>
-                        {/* <FontAwesomeIcon icon={faEye} fixedWidth /> */}
-                        FIXME: Visible Eye Icon
+                        <FontAwesomeIcon icon={faEye} fixedWidth />
                     </Button>
                     <Can action={'database.delete'}>
                         <Button color={'red'} isSecondary onClick={() => setVisible(true)}>
-                            {/* <FontAwesomeIcon icon={faTrashAlt} fixedWidth /> */}
-                            FIXME: Trash Icon
+                            <FontAwesomeIcon icon={faTrashAlt} fixedWidth />
                         </Button>
                     </Can>
                 </div>

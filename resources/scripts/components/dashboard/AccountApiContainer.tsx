@@ -1,6 +1,9 @@
 import { format } from 'date-fns';
 import { useEffect, useState } from 'react';
 
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FlashMessageRender from '@/components/FlashMessageRender';
 import CreateApiKeyForm from '@/components/dashboard/forms/CreateApiKeyForm';
 import Code from '@/components/elements/Code';
@@ -80,11 +83,10 @@ export default () => {
                                     className={`ml-4 p-2 text-sm`}
                                     onClick={() => setDeleteIdentifier(key.identifier)}
                                 >
-                                    {/* <FontAwesomeIcon
+                                    <FontAwesomeIcon
                                         icon={faTrashAlt}
                                         className={`text-zinc-400 hover:text-red-400 transition-colors duration-150`}
-                                    /> */}
-                                    FIXME: Delete Icon
+                                    />
                                 </button>
                             </div>
                         ))
